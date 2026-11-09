@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <PackageId>IDCGames.Integration</PackageId>
+    <Version>2.0.0</Version>
+    <Description>IDC Games Launcher integration reference for Windows x64.</Description>
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/victorlamas/IDCGames-Library</RepositoryUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="IDCGames.Integration.Tests" />
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+    <None Include="../../runtimes/win-x64/native/IDCLib2.dll" Pack="true" PackagePath="runtimes/win-x64/native/" />
+  </ItemGroup>
+</Project>

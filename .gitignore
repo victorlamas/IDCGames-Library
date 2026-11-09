@@ -1,0 +1,12 @@
+**/bin/
+**/obj/
+**/.vs/
+**/packages/
+*.user
+*.suo
+*.log
+.env
+.env.*
+!.env.example
+artifacts/
+.work/

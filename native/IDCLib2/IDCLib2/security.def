@@ -1,0 +1,7 @@
+LIBRARY IDCLib2
+EXPORTS
+	_InitIDCLib						@1
+	_EndIDCLib						@2
+	_OpenShop						@3
+	_ClosePurchase					@4
+	_PullMessage					@5

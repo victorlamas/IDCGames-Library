@@ -1,0 +1,9 @@
+{
+  "file": "IDCLib2.dll",
+  "architecture": "win-x64",
+  "sha256": "0f80a973254a21d0a08950b0b0ecf39da24c2cf7b9a24da64ba2c664f266af51",
+  "bytes": 174080,
+  "source": "native/IDCLib2",
+  "reference": "Launcher IDCGames CSharp_Test",
+  "imported": "2026-11-09"
+}
