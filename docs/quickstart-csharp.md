@@ -2,7 +2,7 @@
 
 
 
-Requisitos: Windows x64, .NET SDK 8+, Launcher IDC Games abierto y con sesión iniciada, juego dado de alta en IDC. Solicitar a IDC el `id_game`, la clave cliente del Launcher y la configuración de tienda/anuncios. Ninguno es un token de GamePanel.
+Para compilar: Windows x64 y .NET SDK 8 o posterior. Para ejecutar la consola compilada: runtime .NET 8 x64; no hace falta el SDK. Un SDK posterior no implica tener instalado el runtime 8. Para conectar con servicios reales: Launcher IDC Games abierto y con sesión iniciada, juego dado de alta en IDC. Solicitar a IDC el `id_game`, la clave cliente del Launcher y la configuración de tienda/anuncios. Ninguno es un token de GamePanel.
 
 
 
@@ -85,3 +85,26 @@ El ejemplo usa el PID del proceso y se basa en el flujo CSharp_Test del Launcher
 
 
 La DLL nativa distribuida es heredada y puede generar sus propios archivos de diagnóstico según la compilación. Aunque el wrapper descarta el callback de log, revisar y proteger también los archivos nativos; no activar ni compartir trazas que contengan credenciales.
+
+## Qué requiere .NET y qué no
+
+El ejemplo original `CSharp_Test/IDCTest.csproj` del Launcher es una consola C# con `TargetFramework=net8.0-windows` y `PlatformTarget=x64`. Su `run.bat` usa `dotnet run --configuration Release`, que compila y ejecuta; por eso necesita SDK. Su `IDCTest.runtimeconfig.json` pide `Microsoft.NETCore.App` 8.0.
+
+La consola publicada en este repositorio también usa .NET 8. El ZIP actual es framework-dependent: requiere el runtime .NET 8 x64, pero no el SDK. Descomprimir todos los archivos juntos; no copiar solo el EXE. Ejecutar `LauncherDemo.exe --demo` para una prueba offline o configurar las variables y ejecutar `LauncherDemo.exe` para el flujo real.
+
+Para comprobar una instalación existente:
+
+```powershell
+dotnet --list-sdks
+dotnet --list-runtimes
+```
+
+Para entregar una consola que incluya el runtime y no exija instalar .NET en el equipo de destino, el desarrollador puede publicar una variante self-contained:
+
+```powershell
+dotnet publish examples/LauncherDemo -c Release -r win-x64 --self-contained true -o artifacts/LauncherDemo-selfcontained
+```
+
+Distribuir la carpeta completa resultante, incluida `IDCLib2.dll`. Esta variante no es el ZIP framework-dependent de la release actual y ocupa más espacio.
+
+IDCLib2.dll es una biblioteca nativa de Windows x64. La dependencia .NET corresponde a esta consola y su wrapper C#; no obliga a usar .NET en un juego integrado desde otro lenguaje o motor. Este ejemplo .NET 8 tampoco es un proyecto .NET Framework 4.x.

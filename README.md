@@ -6,7 +6,7 @@ Repositorio del estudio/Nvia: https://github.com/victorlamas/IDCGames-Library. L
 
 ## Empezar
 
-1. Instalar .NET SDK 8 o posterior en Windows x64.
+1. Para compilar o usar `dotnet run`: Windows x64, .NET SDK 8 o posterior y runtime .NET 8 x64 para ejecutar el ejemplo. Si Visual Studio ya incluye esos componentes, no hace falta instalarlos de nuevo. Para ejecutar el [ejemplo compilado](https://github.com/victorlamas/IDCGames-Library/releases/tag/v2.0.0), descomprimir el ZIP completo y ejecutar `LauncherDemo.exe --demo`: basta el runtime .NET 8 x64, sin SDK.
 2. Ejecutar `dotnet run --project examples/LauncherDemo -- --demo` para ver eventos de ejemplo sin conexiones ni compras.
 3. Ejecutar `dotnet run --project examples/LauncherDemo -- --check-native` para cargar la DLL y comprobar sus cinco exports.
 4. Seguir [el ejemplo C#](docs/quickstart-csharp.md) con las credenciales de aplicación facilitadas por IDC Games.
