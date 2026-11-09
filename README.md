@@ -18,7 +18,6 @@ Repositorio del estudio/Nvia: https://github.com/victorlamas/IDCGames-Library. L
 - [Launcher y ABI nativa](docs/launcher-protocol.md).
 - [Tienda, compras y anuncios de vídeo](docs/shop-and-ads.md).
 - [DLL, procedencia y compilación nativa](native/README.md).
-- [Migración de repositorios oficiales](docs/official-migration.md).
 
 ## Contenido
 
