@@ -2,6 +2,8 @@
 
 Guía independiente de GamePanel para el estudio. Incluye una biblioteca C# y un ejemplo funcional para integrar **IDC Games Launcher (Windows x64)**, más los flujos de autenticación de Steam y Epic para el backend del juego.
 
+En Admin, **Publisher** es la cuenta que publica el juego. **Developer** es quien lo desarrolla y puede ser la misma entidad u otra. Para el alta, las claves MCP y los créditos de la ficha, consulta la [guía oficial de Publisher](https://admin.idcgames.com/publisher/get-started).
+
 Repositorio del estudio/Nvia: https://github.com/victorlamas/IDCGames-Library. La documentación oficial de IDC Games se publica por separado en https://github.com/idcgames/idcgames_integration y trata únicamente de IDC Games.
 
 ## Empezar
